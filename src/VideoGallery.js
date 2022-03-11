@@ -19,7 +19,10 @@ function VideoGallery(props) {
                         return (
 
                             < VideoDisplay
-                                imageSource={video.snippet.thumbnails.high.url}
+                                videoSource={video.id.videoId}
+                                videoTitle={video.snippet.title}
+                                videoDescription={video.snippet.description}
+                                videoDate={video.snippet.publishTime}
                             />
                         )
                     })

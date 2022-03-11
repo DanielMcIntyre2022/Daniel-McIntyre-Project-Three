@@ -4,7 +4,10 @@ function VideoDisplay(props) {
 
     return (
         <li className="video-container">
-            <img src={props.imageSource} alt="" />
+            <h4> {props.videoTitle} </h4>
+            <iframe src={`https://www.youtube.com/embed/${props.videoSource}`} />
+            <p>  {props.videoDescription} </p>
+            <p>  {props.videoDate}</p>
         </li>
     )
 

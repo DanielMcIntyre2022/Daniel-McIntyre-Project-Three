@@ -63,7 +63,9 @@ function App() {
         <h1>Video Diary</h1>
       </header>
       < VideoSearch handleSubmit={searchVideoQuery} />
-      < VideoGallery currentVideos={userVideos} />
+      <main>
+        < VideoGallery currentVideos={userVideos} />
+      </main>
     </div>
   );
 }
