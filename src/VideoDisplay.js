@@ -9,7 +9,7 @@ function VideoDisplay(props) {
                 <iframe src={`https://www.youtube.com/embed/${props.videoSource}`} />
                 {/* <p>  {props.videoDescription} </p> */}
                 {/* <p>  {props.videoDate}</p> */}
-                <button> Save this video </button>
+                <button> Save video </button>
             </div>
         </div>
     )

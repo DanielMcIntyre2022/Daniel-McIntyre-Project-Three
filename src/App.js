@@ -58,7 +58,7 @@ function App() {
     // 12) Provide the user with error handling - if the user inputs nothing in the search bar, prompt them to enter a search query value. Alternatively, if the user mispells the API search query and API returns back an error //
 
     if (searchedVideo === "") {
-      alert("please enter a search query!")
+      alert("Please enter a search query!")
     }
     else
       // 11) Call the state updater function and use the searched option value to update the SearchedVideo state //
@@ -69,6 +69,7 @@ function App() {
     <div className="App">
       <header>
         <h1>Video Diary</h1>
+        <i class="fas fa-book-open"></i>
         < VideoSearch handleSubmit={searchVideoQuery} />
       </header>
       <main>

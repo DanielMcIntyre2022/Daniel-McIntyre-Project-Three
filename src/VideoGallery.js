@@ -11,23 +11,24 @@ function VideoGallery(props) {
     return (
         <section>
             <h2>Your searched videos!</h2>
+            <div className="wrapper">
+                <ul className="videos">
+                    {/* 3) map over the array of searched videos which has been passed via props */}
+                    {
+                        props.currentVideos.map((video) => {
+                            return (
 
-            <ul className="videos">
-                {/* 3) map over the array of searched videos which has been passed via props */}
-                {
-                    props.currentVideos.map((video) => {
-                        return (
-
-                            < VideoDisplay
-                                videoSource={video.id.videoId}
-                                videoTitle={video.snippet.title}
-                                videoDescription={video.snippet.description}
-                                videoDate={video.snippet.publishTime}
-                            />
-                        )
-                    })
-                }
-            </ul>
+                                < VideoDisplay
+                                    videoSource={video.id.videoId}
+                                    videoTitle={video.snippet.title}
+                                    videoDescription={video.snippet.description}
+                                    videoDate={video.snippet.publishTime}
+                                />
+                            )
+                        })
+                    }
+                </ul>
+            </div>
         </section>
     )
 }
