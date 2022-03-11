@@ -14,7 +14,7 @@ function App() {
 
   // 1) call useState to initialize state to keep track of the data which is returned from the API //
   // 2) Initialize our state as an empty array, from the API return of objects //
-  const [videoDisplay, setVideoDisplay] = useState([]);
+  const [userVideos, setUserVideos] = useState([]);
 
   // 3)  // initialize another piece of state to represent the VideoSearchQuery value (which the user will be searching through the form 
 
@@ -38,7 +38,7 @@ function App() {
       // 5) Test the API to query for videos that match the hardcoded query parameter and check the data which is returned by console logging it //
 
       // 6) take the data that is returned from the API can save it within state //
-      setVideoDisplay(apiData.data.items)
+      setUserVideos(apiData.data.items)
     })
 
     // 7) run this side effect every time the user submits the form with a new search query //
@@ -63,7 +63,7 @@ function App() {
         <h1>Video Diary</h1>
       </header>
       < VideoSearch handleSubmit={searchVideoQuery} />
-      < VideoGallery />
+      < VideoGallery currentVideos={userVideos} />
     </div>
   );
 }

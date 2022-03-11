@@ -6,15 +6,25 @@ import VideoDisplay from "./VideoDisplay"
 
 function VideoGallery(props) {
 
+    console.log(props)
+
     return (
         <section>
             <h2>Your searched videos!</h2>
 
             <ul className="videos">
                 {/* 3) map over the array of searched videos which has been passed via props */}
+                {
+                    props.currentVideos.map((video) => {
+                        return (
 
+                            < VideoDisplay
+                                imageSource={video.snippet.thumbnails.high.url}
+                            />
+                        )
+                    })
+                }
             </ul>
-
         </section>
     )
 }
