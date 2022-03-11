@@ -55,9 +55,14 @@ function App() {
     // 10)  Prevent the default on the form AKA tell is to prevent its default behavior (refreshing the page once the user submits the form - or selects videos to search)
     event.preventDefault();
 
-    // 11) Call the state updater function and use the searched option value to update the SearchedVideo state //
-    setvideoSearchQuery(searchedVideo);
+    // 12) Provide the user with error handling - if the user inputs nothing in the search bar, prompt them to enter a search query value. Alternatively, if the user mispells the API search query and API returns back an error //
 
+    if (searchedVideo === "") {
+      alert("please enter a search query!")
+    }
+    else
+      // 11) Call the state updater function and use the searched option value to update the SearchedVideo state //
+      setvideoSearchQuery(searchedVideo);
   }
 
   return (

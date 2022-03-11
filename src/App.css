@@ -32,6 +32,10 @@ iframe {
   flex-direction: column;
 }
 
+.videos-container button {
+  margin-top: 20px;
+}
+
 /* footer */
 
 footer {
