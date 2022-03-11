@@ -20,10 +20,13 @@ function App() {
 
   const [videoSearchQuery, setvideoSearchQuery] = useState(null);
 
+  // 4) // initialize another piece of state to represent the videoDiaryDisplay value (which will save the users videos and display them at the bottom of the page)
+  const [videoDiaryDisplay, setVideoDiaryDisplay] = useState(null);
+
   // 4) Once the component has rendered,  run the useEffect function in order to fetch some data from the API //
   useEffect(() => {
 
-    const API_KEY = 'AIzaSyAJ4akmIO_29YCPrpZr2rZRWUgO_3-e7-E';
+    const API_KEY = 'AIzaSyDpT7YgowEXwOMP7LwstV38iM2hwrZR6Jk';
 
     axios({
       url: 'https://www.googleapis.com/youtube/v3/search',
@@ -61,11 +64,14 @@ function App() {
     <div className="App">
       <header>
         <h1>Video Diary</h1>
+        < VideoSearch handleSubmit={searchVideoQuery} />
       </header>
-      < VideoSearch handleSubmit={searchVideoQuery} />
       <main>
         < VideoGallery currentVideos={userVideos} />
       </main>
+      <footer>
+        Created by Daniel McIntyre
+      </footer>
     </div>
   );
 }
