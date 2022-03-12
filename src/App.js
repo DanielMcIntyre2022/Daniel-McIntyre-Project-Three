@@ -64,11 +64,6 @@ function App() {
       // 11) Call the state updater function and use the searched option value to update the SearchedVideo state //
       setvideoSearchQuery(searchedVideo);
 
-    // 12) Change the state of the h1 to display "your searched videos", instead of "trending videos" based on the conidition of the user search query //
-
-    if (searchedVideo === searchVideoQuery) {
-      document.getElementById("video-search-description").innerHTML = `${searchVideoQuery} Videos`;
-    }
   }
 
   return (
@@ -79,10 +74,10 @@ function App() {
         < VideoSearch handleSubmit={searchVideoQuery} />
       </header>
       <main>
-        < VideoGallery currentVideos={userVideos} />
+        < VideoGallery currentVideos={userVideos} title={videoSearchQuery} />
       </main>
       <footer>
-        Created by Daniel McIntyre
+        Created at <a href="https://junocollege.com/"> Juno College</a> by <a href="https://www.danielcodes.ca/">Daniel McIntyre</a>
       </footer>
     </div>
   );

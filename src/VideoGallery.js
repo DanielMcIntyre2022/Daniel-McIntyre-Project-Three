@@ -10,7 +10,12 @@ function VideoGallery(props) {
 
     return (
         <section>
-            <h2 id="video-search-description">Trending Videos:</h2>
+            <h2 id="video-search-description">
+                {
+                    (props.title ? `${props.title} ` : 'Trending ')
+                }
+
+                Videos:</h2>
             <div className="wrapper">
                 <ul className="videos">
                     {/* 3) map over the array of searched videos which has been passed via props */}
@@ -20,9 +25,6 @@ function VideoGallery(props) {
 
                                 < VideoDisplay
                                     videoSource={video.id.videoId}
-                                    videoTitle={video.snippet.title}
-                                    videoDescription={video.snippet.description}
-                                    videoDate={video.snippet.publishTime}
                                 />
                             )
                         })
