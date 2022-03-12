@@ -10,7 +10,7 @@ function VideoGallery(props) {
 
     return (
         <section>
-            <h2>Your searched videos!</h2>
+            <h2 id="video-search-description">Trending Videos:</h2>
             <div className="wrapper">
                 <ul className="videos">
                     {/* 3) map over the array of searched videos which has been passed via props */}

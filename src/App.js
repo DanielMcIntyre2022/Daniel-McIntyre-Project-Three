@@ -34,7 +34,7 @@ function App() {
         key: API_KEY,
         part: 'snippet',
         q: videoSearchQuery,
-        maxResult: 1,
+        maxResults: 3,
       }
     }).then((apiData) => {
       console.log(apiData);
@@ -63,6 +63,12 @@ function App() {
     else
       // 11) Call the state updater function and use the searched option value to update the SearchedVideo state //
       setvideoSearchQuery(searchedVideo);
+
+    // 12) Change the state of the h1 to display "your searched videos", instead of "trending videos" based on the conidition of the user search query //
+
+    if (searchedVideo === searchVideoQuery) {
+      document.getElementById("video-search-description").innerHTML = `${searchVideoQuery} Videos`;
+    }
   }
 
   return (
