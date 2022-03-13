@@ -1,4 +1,4 @@
-import VideoDiary from "./VideoDiary";
+import UserSaveInput from "./VideoDiary";
 
 function VideoDisplay(props) {
 
@@ -9,7 +9,7 @@ function VideoDisplay(props) {
             <div className="video-container">
                 {/* <h4> {props.videoTitle} </h4> */}
                 <iframe src={`https://www.youtube.com/embed/${props.videoSource}`} />
-                < VideoDiary />
+                < UserSaveInput handleSubmit={props.userInput} />
             </div>
         </div>
     )
