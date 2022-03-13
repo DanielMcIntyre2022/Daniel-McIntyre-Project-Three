@@ -7,8 +7,7 @@ import { useState, useEffect } from 'react';
 import VideoSearch from './VideoSearch';
 // import the VideoGallrey component //
 import VideoGallery from './VideoGallery';
-// import the videoDiary component //
-import VideoDiary from './VideoDiary';
+
 
 function App() {
 
@@ -20,13 +19,10 @@ function App() {
 
   const [videoSearchQuery, setvideoSearchQuery] = useState(null);
 
-  // 4) // initialize another piece of state to represent the videoDiaryDisplay value (which will save the users videos and display them at the bottom of the page)
-  const [videoDiaryDisplay, setVideoDiaryDisplay] = useState(null);
-
   // 4) Once the component has rendered,  run the useEffect function in order to fetch some data from the API //
   useEffect(() => {
 
-    const API_KEY = 'AIzaSyDpT7YgowEXwOMP7LwstV38iM2hwrZR6Jk';
+    const API_KEY = 'AIzaSyBnHv3MPdCg20VnukUcVjlunS6G_kZPmjg';
 
     axios({
       url: 'https://www.googleapis.com/youtube/v3/search',
@@ -37,8 +33,8 @@ function App() {
         maxResults: 3,
       }
     }).then((apiData) => {
-      console.log(apiData);
-      // 5) Test the API to query for videos that match the hardcoded query parameter and check the data which is returned by console logging it //
+
+      // 5) Test the API to query for videos that match the hardcoded query parameter and check the data which is returned by console logging it //console.log(apiData);
 
       // 6) take the data that is returned from the API can save it within state //
       setUserVideos(apiData.data.items)
