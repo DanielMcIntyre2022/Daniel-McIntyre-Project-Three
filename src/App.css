@@ -149,8 +149,15 @@ iframe {
   border: solid 2.5px #4682b4;
 }
 
-.video-diary-button button {
+.saved-videos-container button {
   width: 100px;
+  background-color: #4682b4;
+  color: white;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-weight: 700;
 }
 
 /* footer */

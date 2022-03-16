@@ -3,7 +3,7 @@ import firebase from "./firebase";
 // import the useState Hook and the useEffect Hook 
 import { useState, useEffect } from 'react';
 // import getDatabase, ref, onValue and push //
-import { getDatabase, ref, onValue } from 'firebase/database';
+import { getDatabase, ref, onValue, remove } from 'firebase/database';
 
 function SaveVideoGallery(props) {
 
@@ -11,7 +11,7 @@ function SaveVideoGallery(props) {
 
     const [savedVideo, setSavedVideo] = useState([]);
 
-    // 2) // Make second call to the database to retrive the user video saved information //
+    // 3) // Make second call to the database to retrive the user video saved information //
 
     useEffect(() => {
 
@@ -29,13 +29,24 @@ function SaveVideoGallery(props) {
         });
     }, []);
 
+    // (4) // Make a call to the database to remove the user's saved video(s) //
+
+    const handleSubmit = () => {
+        const database = getDatabase(firebase);
+        const dbRef = ref(database);
+        remove(dbRef, `${props.videoSource}`);
+    }
+
     return (
         props.userInput !== null ? <div className="wrapper">
             <h2> Your Saved Videos: </h2>
             <div className="saved-videos-container">
                 {savedVideo.map((savedVideoDisplay) => {
                     return (
-                        <iframe title="saved-video-iframe" src={`https://www.youtube.com/embed/${savedVideoDisplay}`} />
+                        <>
+                            <iframe title="saved-video-iframe" src={`https://www.youtube.com/embed/${savedVideoDisplay}`} />
+                            <button onClick={() => handleSubmit(savedVideoDisplay)}>Remove Videos</button>
+                        </>
                     )
                 })
                 }
