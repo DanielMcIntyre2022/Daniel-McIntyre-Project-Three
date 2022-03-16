@@ -8,6 +8,8 @@ import VideoSearch from './VideoSearch';
 // import the VideoGallrey component //
 import VideoGallery from './VideoGallery';
 
+import SaveVideoGallery from './SaveVideoGallery';
+
 function App() {
 
   // 1) call useState to initialize state to keep track of the data which is returned from the API //
@@ -17,6 +19,10 @@ function App() {
   // 3)  // initialize another piece of state to represent the VideoSearchQuery value (which the user will be searching through the form 
 
   const [videoSearchQuery, setvideoSearchQuery] = useState(null);
+
+  // 4) // create state for user saved video //
+
+  const [showSavedVideo, setShowSavedVideo] = useState(false);
 
   // 4) Once the component has rendered,  run the useEffect function in order to fetch some data from the API //
   useEffect(() => {
@@ -61,6 +67,10 @@ function App() {
 
   }
 
+  const videoSavedConfirm = (showVideo) => {
+    setShowSavedVideo(showVideo)
+  }
+
   return (
     <div className="App">
       <header>
@@ -69,7 +79,8 @@ function App() {
         < VideoSearch handleSubmit={searchVideoQuery} />
       </header>
       <main>
-        < VideoGallery currentVideos={userVideos} title={videoSearchQuery} />
+        < VideoGallery currentVideos={userVideos} title={videoSearchQuery} userSavedVideo={videoSavedConfirm} />
+        {showSavedVideo ? < SaveVideoGallery /> : null}
       </main>
       <footer>
         Created at <a href="https://junocollege.com/"> Juno College</a> by <a href="https://www.danielcodes.ca/">Daniel McIntyre</a>

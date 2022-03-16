@@ -20,6 +20,7 @@ html { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: 
 .wrapper {
   width: 80%;
   margin: 0 auto;
+  text-align: center;
 }
 
 /* fonts */
@@ -129,6 +130,15 @@ iframe {
 }
 
 /* Video Diary */
+
+.saved-video-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  padding: 20px;
+  column-gap: 25px;
+  margin: 0 auto;
+}
 
 .video-diary-button button {
   width: 100px;

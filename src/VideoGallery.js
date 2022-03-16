@@ -22,7 +22,7 @@ function VideoGallery(props) {
                             return (
 
                                 < VideoDisplay
-                                    videoSource={video.id.videoId}
+                                    videoSource={video.id.videoId} userSavedVideo={props.userSavedVideo}
                                 />
                             )
                         })

@@ -1,11 +1,9 @@
 // import the firebase component //
 import firebase from "./firebase";
-// import the useState Hook and the useEffect Hook //
+// import the useState Hook and the useEffect Hook /
 import { useState, useEffect } from 'react';
 // import getDatabase, ref, onValue and push //
 import { getDatabase, ref, onValue, push } from 'firebase/database';
-// import SaveVideo component 
-import SaveVideoGallery from "./SaveVideoGallery";
 
 function VideoDisplay(props) {
 
@@ -31,8 +29,8 @@ function VideoDisplay(props) {
     const handleSubmit = () => {
         const database = getDatabase(firebase);
         const dbRef = ref(database);
-        push(dbRef, userInput);
-        setUserInput(props.videoSource);
+        push(dbRef, `${props.videoSource}`);
+        props.userSavedVideo(true);
     }
 
     return (
@@ -43,7 +41,6 @@ function VideoDisplay(props) {
                     value={userInput}
                 >
                     Save video </ button >
-                < SaveVideoGallery userInput={userInput} />
             </div>
         </div>
     )
