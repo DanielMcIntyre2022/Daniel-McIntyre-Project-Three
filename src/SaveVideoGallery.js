@@ -26,7 +26,6 @@ function SaveVideoGallery(props) {
             }
             setSavedVideo(newState);
 
-            console.log(savedVideo);
         });
     }, []);
 
