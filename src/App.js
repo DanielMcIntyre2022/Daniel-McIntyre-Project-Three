@@ -7,9 +7,6 @@ import { useState, useEffect } from 'react';
 import VideoSearch from './VideoSearch';
 // import the VideoGallrey component //
 import VideoGallery from './VideoGallery';
-// import UserSaveInput component //
-import VideoDisplay from './VideoDisplay';
-
 
 function App() {
 
@@ -24,7 +21,7 @@ function App() {
   // 4) Once the component has rendered,  run the useEffect function in order to fetch some data from the API //
   useEffect(() => {
 
-    const API_KEY = 'AIzaSyBnHv3MPdCg20VnukUcVjlunS6G_kZPmjg';
+    const API_KEY = 'AIzaSyCufIn_YssYVtfCuPW3F_6G60nRqYsfHHo';
 
     axios({
       url: 'https://www.googleapis.com/youtube/v3/search',

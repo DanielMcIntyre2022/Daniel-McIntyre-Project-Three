@@ -6,13 +6,11 @@ import VideoDisplay from "./VideoDisplay";
 
 function VideoGallery(props) {
 
-    console.log(props)
-
     return (
         <section>
             <h2 id="video-search-description">
                 {
-                    (props.title ? `${props.title} ` : 'Trending ')
+                    (props.title ? `${props.title} ` : 'Global Trending ')
                 }
 
                 Videos:</h2>

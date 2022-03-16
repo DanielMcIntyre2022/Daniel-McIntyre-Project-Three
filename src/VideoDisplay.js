@@ -4,11 +4,13 @@ import firebase from "./firebase";
 import { useState, useEffect } from 'react';
 // import getDatabase, ref, onValue and push //
 import { getDatabase, ref, onValue, push } from 'firebase/database';
+// import SaveVideo component 
+import SaveVideoGallery from "./SaveVideoGallery";
 
 function VideoDisplay(props) {
 
-    // 2) // initalize a piece of state to represent the userInput from the 'save video' button clicked which cooresponds with the userVideo //
-    const [userInput, setUserInput] = useState();
+    // 1) // initalize a piece of state to represent the userInput from the 'save video' button clicked which cooresponds with the userVideo //
+    const [userInput, setUserInput] = useState({});
 
     useEffect(() => {
 
@@ -33,20 +35,18 @@ function VideoDisplay(props) {
         setUserInput(props.videoSource);
     }
 
-
     return (
         <div className="videos-container">
             <div className="video-container">
-                {/* <h4> {props.videoTitle} </h4> */}
                 <iframe src={`https://www.youtube.com/embed/${props.videoSource}`} />
                 <button className="video-diary-button" onClick={handleSubmit}
                     value={userInput}
-                > Save video </ button >
+                >
+                    Save video </ button >
+                < SaveVideoGallery userInput={userInput} />
             </div>
         </div>
     )
-
 }
-
 
 export default VideoDisplay;
