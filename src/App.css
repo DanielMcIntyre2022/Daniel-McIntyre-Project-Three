@@ -101,6 +101,7 @@ li {
 iframe {
   width: 100%;
   height: 50vh;
+  margin-bottom: 10px;
 }
 
 .videos {
@@ -138,6 +139,14 @@ iframe {
   padding: 20px;
   column-gap: 25px;
   margin: 0 auto;
+}
+
+.saved-videos-container iframe {
+  width: 30%;
+  padding: 20px;
+  column-gap: 25px;
+  margin: 0 auto;
+  border: solid 2.5px #4682b4;
 }
 
 .video-diary-button button {
