@@ -36,7 +36,7 @@ function SaveVideoGallery(props) {
             <div className="saved-videos-container">
                 {savedVideo.map((savedVideoDisplay) => {
                     return (
-                        <iframe src={`https://www.youtube.com/embed/${savedVideoDisplay}`} />
+                        <iframe title="saved-video-iframe" src={`https://www.youtube.com/embed/${savedVideoDisplay}`} />
                     )
                 })
                 }

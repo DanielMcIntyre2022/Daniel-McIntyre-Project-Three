@@ -36,7 +36,7 @@ function VideoDisplay(props) {
     return (
         <div className="videos-container">
             <div className="video-container">
-                <iframe src={`https://www.youtube.com/embed/${props.videoSource}`} />
+                <iframe title="video-display-iframe" src={`https://www.youtube.com/embed/${props.videoSource}`} />
                 <button className="video-diary-button" onClick={handleSubmit}
                     value={userInput}
                 >
