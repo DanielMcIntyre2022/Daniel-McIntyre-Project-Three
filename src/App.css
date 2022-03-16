@@ -178,6 +178,11 @@ footer a {
     flex-direction: column;
   }
 
+  .saved-video-container {
+    display: flex;
+    flex-direction: column;
+  }
+
   form input {
     font-size: 17px;
   }

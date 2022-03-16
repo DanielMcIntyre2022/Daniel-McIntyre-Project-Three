@@ -15,7 +15,7 @@ function VideoGallery(props) {
 
                 Videos:</h2>
             <div className="wrapper">
-                <ul className="videos">
+                <div className="videos">
                     {/* 3) map over the array of searched videos which has been passed via props */}
                     {
                         props.currentVideos.map((video) => {
@@ -27,7 +27,7 @@ function VideoGallery(props) {
                             )
                         })
                     }
-                </ul>
+                </div>
             </div>
         </section>
     )
