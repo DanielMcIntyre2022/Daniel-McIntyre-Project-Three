@@ -142,7 +142,7 @@ iframe {
 }
 
 .saved-videos-container iframe {
-  width: 30%;
+  width: 50%;
   padding: 20px;
   column-gap: 25px;
   margin: 0 auto;
