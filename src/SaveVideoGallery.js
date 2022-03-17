@@ -34,7 +34,7 @@ function SaveVideoGallery(props) {
     const handleSubmit = () => {
         const database = getDatabase(firebase);
         const dbRef = ref(database);
-        remove(dbRef, `${props.videoSource}`);
+        remove(dbRef);
     }
 
     return (
@@ -43,15 +43,17 @@ function SaveVideoGallery(props) {
             <div className="saved-videos-container">
                 {savedVideo.map((savedVideoDisplay) => {
                     return (
+
                         <>
                             <iframe title="saved-video-iframe" src={`https://www.youtube.com/embed/${savedVideoDisplay}`} />
-                            <button onClick={() => handleSubmit(savedVideoDisplay)}>Remove Videos</button>
+                            <button onClick={handleSubmit}>Remove Video</button>
                         </>
                     )
                 })
                 }
             </div>
         </div> : null
+
     )
 }
 

@@ -142,15 +142,14 @@ iframe {
 }
 
 .saved-videos-container iframe {
-  width: 50%;
+  width: 70%;
   padding: 20px;
   column-gap: 25px;
   margin: 0 auto;
-  border: solid 2.5px #4682b4;
 }
 
 .saved-videos-container button {
-  width: 100px;
+  width: 150px;
   background-color: #4682b4;
   color: white;
   padding-top: 10px;
@@ -158,6 +157,8 @@ iframe {
   padding-left: 10px;
   padding-right: 10px;
   font-weight: 700;
+  margin-left: 5%;
+  margin-bottom: 2%;
 }
 
 /* footer */
