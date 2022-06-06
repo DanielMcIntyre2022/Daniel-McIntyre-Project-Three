@@ -27,7 +27,7 @@ function App() {
   // 4) Once the component has rendered,  run the useEffect function in order to fetch some data from the API //
   useEffect(() => {
 
-    const API_KEY = 'AIzaSyCN1lyrqCgIJyDhIsg55xmR4pogt_rzXsE';
+    const API_KEY = 'AIzaSyCH46jqLU8M-yob68yZXXM97d6cIWKA7g4';
 
     axios({
       url: 'https://www.googleapis.com/youtube/v3/search',
